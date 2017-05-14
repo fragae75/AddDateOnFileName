@@ -1,7 +1,7 @@
 package com.flg.DateOnFileName;
 
 //import java.awt.FileDialog;
-import javax.swing.JFileChooser;
+//import javax.swing.JFileChooser;
 
 // exe : http://stackoverflow.com/questions/8774546/making-exe-file-for-java-project-containing-sqlite
 /*
