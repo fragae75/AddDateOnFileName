@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -16,6 +17,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import com.mpatric.mp3agic.InvalidDataException;
+import com.mpatric.mp3agic.NotSupportedException;
+import com.mpatric.mp3agic.UnsupportedTagException;
 
 
 public class FenetreAddDateOnFileName extends JFrame {
@@ -91,13 +96,18 @@ public class FenetreAddDateOnFileName extends JFrame {
 	/*
 	 * Bouton Start
 	 */
-	class BoutonListenerStart implements ActionListener{
+	class BoutonListenerStart implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 		    System.out.println("Start");
 		    DateOnFileName.sRepertoire = jtfRepertoire.getText();
-	    	DateOnFileName.traiteFichier.renameFilesByModificationDate(DateOnFileName.bSimulation, DateOnFileName.sRepertoire, jtLog);
+	    	try {
+				DateOnFileName.traiteFichier.renameFilesByModificationDate(DateOnFileName.bSimulation, DateOnFileName.sRepertoire, jtLog);
+			} catch (UnsupportedTagException | InvalidDataException | NotSupportedException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 	    }
 	  }

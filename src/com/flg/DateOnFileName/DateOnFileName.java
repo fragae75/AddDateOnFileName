@@ -1,5 +1,17 @@
 package com.flg.DateOnFileName;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+import com.mpatric.mp3agic.ID3v1;
+import com.mpatric.mp3agic.ID3v1Tag;
+import com.mpatric.mp3agic.ID3v2;
+import com.mpatric.mp3agic.ID3v24Tag;
+import com.mpatric.mp3agic.InvalidDataException;
+import com.mpatric.mp3agic.Mp3File;
+import com.mpatric.mp3agic.NotSupportedException;
+import com.mpatric.mp3agic.UnsupportedTagException;
+
 //import java.awt.FileDialog;
 //import javax.swing.JFileChooser;
 
@@ -17,6 +29,7 @@ public class DateOnFileName {
 	static TraiteFichier traiteFichier = new TraiteFichier();
 	
 	public static void main(String[] args) {
+
 		fenetreAddDateOnFileName = new FenetreAddDateOnFileName();
 
 	}
